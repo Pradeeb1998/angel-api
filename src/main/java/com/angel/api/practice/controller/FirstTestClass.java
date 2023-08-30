@@ -33,11 +33,7 @@ public class FirstTestClass {
             OkHttpClient client = new OkHttpClient();
 
             MediaType mediaType = MediaType.parse("application/json");
-            
-            String userid=login.getClientcode();
-            String userPassword=login.getPassword();
-            String  totp=String.valueOf(login.getTotp()) ;
-            
+                   
             String requestBodyJson =objectMapper.writeValueAsString(login);
               
             RequestBody body = RequestBody.create(mediaType, requestBodyJson);
