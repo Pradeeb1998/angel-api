@@ -3,10 +3,6 @@ package com.angel.api.practice.controller;
 
 import java.io.IOException;
 
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
-
 import org.springframework.web.bind.annotation.*;
 
 import com.angel.api.practice.errorhandle.ApiResponse;
@@ -66,6 +62,26 @@ public class FirstTestClass {
             e.printStackTrace();
             return new ApiResponse(false, true, e.getMessage());
         }
+    }
+
+    @GetMapping(path="/userProfile")
+    public ApiResponse getUserProfile(){
+        
+             OkHttpClient client = new OkHttpClient();
+             Request request = new Request.Builder().url("https://apiconnect.angelbroking.com/rest/secure/angelbroking/user/v1/getProfile")
+             .method("GET", null)
+  .addHeader("Authorization", "Bearer AUTHORIZATION_TOKEN")
+  .addHeader("Accept", "application/json")
+  .addHeader("X-UserType", "USER")
+  .addHeader("X-SourceID", "WEB")
+  .addHeader("X-ClientLocalIP", "CLIENT_LOCAL_IP")
+  .addHeader("X-ClientPublicIP", "CLIENT_PUBLIC_IP")
+  .addHeader("X-MACAddress", "MAC_ADDRESS")
+  .addHeader("X-PrivateKey", "API_KEY")
+  .build();
+Response response = client.newCall(request).execute();
+
+         return new ApiResponse(false, true, e.getMessage());
     }
 
 }
