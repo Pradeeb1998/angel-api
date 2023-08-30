@@ -37,9 +37,6 @@ public class FirstTestClass {
             String requestBodyJson =objectMapper.writeValueAsString(login);
               
             RequestBody body = RequestBody.create(mediaType, requestBodyJson);
-
-
-		String name;
             
             Request request = new Request.Builder().url("https://apiconnect.angelbroking.com/rest/auth/angelbroking/user/v1/loginByPassword")
                     .method("POST", body)
