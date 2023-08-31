@@ -1,6 +1,5 @@
 package com.angel.api.practice.controller;
 
-
 import java.io.IOException;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,9 +26,20 @@ public class FirstTestClass {
 		return loginResponse;
 		}
 
+      @ResponseBody
+    @PostMapping(path = "/getToken",produces="application/json", consumes="application/json")
+    public ApiResponse getToken(@org.springframework.web.bind.annotation.RequestBody Login  login)  {
+      System.out.println("come to login");
+    	ApiResponse loginResponse=loginService.getToken(login);
+    	
+		return loginResponse;
+		}
+
+    @ResponseBody
     @GetMapping(path="/userProfile")
     public ApiResponse getUserProfile() throws IOException{
     	ApiResponse userProfile=loginService.userProfile();
 		return userProfile;
 	}
+
 }

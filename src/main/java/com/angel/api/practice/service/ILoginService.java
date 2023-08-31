@@ -7,5 +7,6 @@ public interface ILoginService {
 
 	public ApiResponse login(Login  login);
 	public ApiResponse userProfile();
+	public ApiResponse getToken(Login login);
 	
 }
