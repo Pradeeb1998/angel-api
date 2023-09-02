@@ -1,6 +1,6 @@
 package com.angel.api.practice.model;
 
-public class Login {
+public class LoginRequest {  //  LoginRequest
 	
 	private String clientcode;
 	private String password;
@@ -25,7 +25,7 @@ public class Login {
 		this.totp = totp;
 	}
 	
-	public Login(String clientcode, String password, int totp) {
+	public LoginRequest(String clientcode, String password, int totp) {
 		super();
 		this.clientcode = clientcode;
 		this.password = password;
