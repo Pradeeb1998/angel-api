@@ -128,7 +128,7 @@ public class LoginServiceImpl implements ILoginService {
             		  .addHeader("X-ClientLocalIP", "CLIENT_LOCAL_IP")
             		  .addHeader("X-ClientPublicIP", "CLIENT_PUBLIC_IP")
             		  .addHeader("X-MACAddress", "MAC_ADDRESS")
-            		  .addHeader("X-PrivateKey", "API_KEY")
+            		  .addHeader("X-PrivateKey", "RCvbyZRP")
             		  .build();
 
             Response response = client.newCall(request).execute();

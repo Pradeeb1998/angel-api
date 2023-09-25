@@ -1,5 +1,10 @@
 package com.angel.api.practice.errorhandle;
 
+import lombok.Data;
+import lombok.ToString;
+
+@ToString
+@Data
 public class ApiResponse {
     private boolean success;
     private boolean error;
